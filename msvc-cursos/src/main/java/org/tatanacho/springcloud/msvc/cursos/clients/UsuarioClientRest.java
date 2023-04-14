@@ -6,7 +6,7 @@ import org.tatanacho.springcloud.msvc.cursos.models.Usuario;
 
 import java.util.List;
 
-@FeignClient(name="msvc-usuarios", url="msvc-usuarios:8001")
+@FeignClient(name="msvc-usuarios", url="${msvc.usuarios.url}")
 public interface UsuarioClientRest {
     @GetMapping("/{id}")
     Usuario detalle(@PathVariable Long id);
